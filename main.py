@@ -113,3 +113,39 @@ class Solution:
 
 # ===============
 
+# level order traversal
+
+from collections import deque
+
+class BinaryTreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+        
+a = BinaryTreeNode('a')
+b = BinaryTreeNode('b')
+c = BinaryTreeNode('c')
+d = BinaryTreeNode('d')
+e = BinaryTreeNode('e')
+
+a.left = b
+a.right = c
+b.left = d
+b.right = e
+
+def levelOrderTraversal(root):
+    
+    queue = deque()
+    queue.append(root)
+    while len(queue) > 0:
+        curr = queue.popleft()
+        print(curr.value)
+        if curr.left:
+            queue.append(curr.left)
+        if curr.right:
+            queue.append(curr.right)
+            
+levelOrderTraversal(a)
+
+# ===============
