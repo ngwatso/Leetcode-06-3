@@ -149,3 +149,39 @@ def levelOrderTraversal(root):
 levelOrderTraversal(a)
 
 # ===============
+
+# BST (Binary Search Tree) In-order traversal
+#(Will give nodes in sorted order)
+
+class BinaryTreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+        
+a = BinaryTreeNode(10)
+b = BinaryTreeNode(7)
+c = BinaryTreeNode(20)
+d = BinaryTreeNode(6)
+e = BinaryTreeNode(8)
+f = BinaryTreeNode(18)
+g = BinaryTreeNode(21)
+
+a.left = b
+a.right = c
+b.left = d
+b.right = e
+c.left = f
+c.right = g
+
+def inOrderTraversal(root):
+    
+    if root.left:
+        inOrderTraversal(root.left)
+    print(root.value)
+    if root.right:
+        inOrderTraversal(root.right)
+        
+inOrderTraversal(a)
+
+# ===============
