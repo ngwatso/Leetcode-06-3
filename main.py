@@ -78,3 +78,38 @@ class Solution:
 
         if root.right != None:
             self.preorderTraversalHelper(root.right, res)
+
+# ===============
+
+# Pre-order traversal using recursion
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
+        
+        res = []
+        
+        if root != None:
+            self.postorderTraversalHelper(root, res)      
+        return res
+    
+    def postorderTraversalHelper(self, root, res):
+        
+        if root == None:
+            return
+        
+        if root.left != None:
+            self.postorderTraversalHelper(root.left, res)
+
+        if root.right != None:
+            self.postorderTraversalHelper(root.right, res)
+            
+        res.append(root.val)
+
+# ===============
+
