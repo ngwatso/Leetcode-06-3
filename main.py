@@ -81,7 +81,7 @@ class Solution:
 
 # ===============
 
-# Pre-order traversal using recursion
+# Post-order traversal using recursion
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -220,3 +220,6 @@ def inOrderTraversal(root):
         inOrderTraversal(root.left)  
         
 inOrderTraversal(a)
+
+# ===============
+
